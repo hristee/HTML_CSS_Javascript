@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Traffic Light</title>
+    <style>
+
+        .light1 {
+            position: absolute;
+            top: 50px;
+            left: 30px;
+            width: 60px;
+            border-radius: 50%;
+        }
+
+        .light2 {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin: 10px 0;
+        }
+        /*.light3 {
+            position: absolute;
+            top: 100px;
+            left: 60px;
+            width: 60px;
+            border-radius: 50%;
+        }*/
+
+        .yellow {
+            background-color: yellow;
+            animation: flashYellow 10s;
+        }
+
+        .red {
+            background-color: white;
+            animation: flashRed 8s;
+            animation-delay: 1s;
+        }
+        .green {
+            background-color: green;
+            animation: flashGreen 10s;
+        }
+
+
+       
+
+        @keyframes flashYellow {
+            0%, 30% {
+                background-color: yellow;
+            }
+
+            30% {
+                background-color: white;
+            }
+        }
+
+        @keyframes flashRed {
+            35%, 60% {
+                background-color: red;
+            }
+
+            60% {
+                background-color: white;
+            }
+        }
+        @keyframes flashGreen {
+            65%, 100% {
+                background-color: green;
+            }
+
+            100% {
+                background-color: white;
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1>Traffic Light:</h1>
+    
+    <div class="light1" >
+        <div class="light2 yellow"></div>
+        <div class="light2 red"></div>
+
+        <div class="light2 green"></div>
+    </div>
+</body>
+</html>

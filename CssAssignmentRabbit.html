@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Rabbit</title>
+    <style>
+
+
+
+        .mov {
+            width: 100px;
+            height: 100px;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6yQvDDDDyzZhwIdxtSHWZb8887xzgRH-xhg&usqp=CAU');
+            background-size: 100px 100px;
+            position: absolute;
+            animation: moverabit 10s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            animation-delay: 2s;
+        }
+
+
+        @keyframes moverabit {
+            0% {
+                left: 0px;
+                top: 110px;
+            }
+
+            25% {
+                left: 500px;
+                top: 150px;
+            }
+
+            50% {
+                left: 500px;
+                top: 450px;
+            }
+
+            75% {
+                left: 0px;
+                top: 450px;
+            }
+
+            100% {
+                left: 0px;
+                top: 110px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Animation:Rabbit move.</h1>
+
+    <p> The is a example of CSS animation Property:</p>
+
+    <div class="mov"></div>
+</body>
+</html>

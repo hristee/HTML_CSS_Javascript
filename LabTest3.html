@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Hotel Booking</title>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Style the header */
+        header {
+            background-color: green;
+            padding: 20px;
+            text-align: center;
+            font-size: 25px;
+            color: black;
+        }
+
+        /* Create two columns/boxes that floats next to each other */
+        nav {
+            float: left;
+            width: 20%;
+            height: 600px; /* only for demonstration, should be removed */
+            background: #ccc;
+            padding: 20px;
+        }
+
+            /* Style the list inside the menu */
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+        article {
+            float: left;
+            padding: 30px;
+            width: 80%;
+            background-color: papayawhip;
+            height: 600px; /* only for demonstration, should be removed */
+        }
+
+
+
+        /* Clear floats after the columns */
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+
+
+        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        @media (max-width: 600px) {
+            nav, article {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Tourism Site</h2>
+
+
+    <header>
+        <h2>Rangamati</h2>
+
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="file:///E:/3-2/Web%20development%20lab/html%20assignment/Lab%20test.html">Home</a></li>
+                <li><a href="file:///E:/3-2/Web%20development%20lab/html%20assignment/Labtest2.html">Heritage</a></li>
+                <li><a href="file:///E:/3-2/Web%20development%20lab/html%20assignment/LabTest3.html">Hotel Booking</a></li>
+                <li><a href="file:///E:/3-2/Web%20development%20lab/html%20assignment/Labtest1.html">Gallery</a></li>
+
+            </ul>
+        </nav>
+        
+        <article>
+            <center>
+                <h1>
+                    <font face="Brush Script" size="6" color="red">
+                        <b>
+                            HOTEL BOOKING
+                        </b>
+                    </font>
+                </h1>
+            </center>
+            <br>
+            <p align="justify">
+                <form>
+                    <label for="fname">First Name:</label>
+                    <input type="text"><br><br>
+                    <label for="lname">Last Name:</label>
+                    <input type="text"><br><br>
+                    <label for="phone">Phone:</label>
+                    <input type="tel"><br><br>
+                    <label for="hname">Hotel Name:</label>
+                    <input type="text"><br><br>
+                    <label for="idnumber">NID:</label>
+                    <input type="number"><br><br>
+                    <label for="rnumber">Room Needed:</label>
+                    <input type="number"><br><br>
+                    <label for="rtype">Room type:</label>
+                    <input type='radio' name="type">Single bed
+                    <input type='radio' name="type">Double bed
+                    <input type='radio' name="type">Suit<br /><br />
+                    <label for="address">Address:</label>
+                    <textarea id="address"></textarea><br><br>
+                    <label for="date">Check-In date:</label>
+                    <input type="date"><br><br>
+                    <label for="date">Check-Out date:</label>
+                    <input type="date"><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </p>
+        </article>
+</section>
+</body>
+</html>
