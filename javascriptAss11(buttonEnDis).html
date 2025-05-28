@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Enable/Disable Button</title>
+</head>
+<body>
+    <button id="myButton">Target Button</button>
+    <button id="disableButton">Disable Button</button>
+    <button id="enableButton">Enable Button</button>
+
+    <script>
+        // Get references to the buttons
+        var myButton = document.getElementById("myButton");
+        var disableButton = document.getElementById("disableButton");
+        var enableButton = document.getElementById("enableButton");
+
+        // Function to disable the target button
+        function disableMyButton() {
+            myButton.disabled = true;
+        }
+
+        // Function to enable the target button
+        function enableMyButton() {
+            myButton.disabled = false;
+        }
+
+        // Add event listeners to the "Disable" and "Enable" buttons
+        disableButton.addEventListener("click", disableMyButton);
+        enableButton.addEventListener("click", enableMyButton);
+    </script>
+</body>
+</html>

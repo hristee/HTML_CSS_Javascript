@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Limit Example</title>
+    <script type="text/javascript">
+        function updateCharacterCount() {
+            const inputElement = document.getElementById("text-input");
+            const maxLength = parseInt(inputElement.getAttribute("maxlength"));
+            const currentLength = inputElement.value.length;
+            const remainingCharacters = maxLength - currentLength;
+
+            const characterCountElement = document.getElementById("character-count");
+            characterCountElement.innerHTML = `${remainingCharacters} characters remaining`;
+
+            if (remainingCharacters < 0) {
+                characterCountElement.style.color = "red";
+            } else {
+                characterCountElement.style.color = "black";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Character Limit Example</h1>
+    <label for="text-input">Enter text (maximum 10 characters):</label>
+    <input type="text" id="text-input" maxlength="10" oninput="updateCharacterCount()" placeholder="Type something...">
+    <p id="character-count">10 characters remaining</p>
+</body>
+</html>

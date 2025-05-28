@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkbox and Dropdown Example</title>
+</head>
+<body>
+    <h1>Checkbox and Dropdown Example</h1>
+
+    
+    <label for="checkbox">Check this box:</label>
+    <input type="checkbox" id="checkbox">
+
+    <label for="dropdown">Select an option:</label>
+    <select id="dropdown">
+        <option value="Fruit">Mango</option>
+        <option value="Animal">Cow</option>
+        <option value="">Bread</option>
+    </select>
+
+    <p id="output"></p>
+
+    <script>
+        //  checkbox and dropdown elements
+        const checkbox = document.getElementById('checkbox');
+        const dropdown = document.getElementById('dropdown');
+        const output = document.getElementById('output');
+
+        // Add an event listener to the checkbox
+        checkbox.addEventListener('change', function() {
+            if (checkbox.checked) {
+                output.textContent = 'Checkbox is checked';
+            } else {
+                output.textContent = 'Checkbox is unchecked';
+            }
+        });
+
+        // Add an event listener to the dropdown
+        dropdown.addEventListener('change', function() {
+            const selectedOption = dropdown.options[dropdown.selectedIndex].text;
+            // Check if the checkbox is checked initially and display an alert if not
+            if (!checkbox.checked) {
+                alert('Please check the checkbox.');
+            }
+            else { output.textContent = `Selected option: ${selectedOption}`; }
+        });
+
+        
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>MAWLANA BHASHANI SCIENCE AND TECHNOLOGY</title>
+</head>
+<body>
+    <center>
+        <h1>FACULTY AND DEPARTMENT SELECTOR</h1>
+
+        <!-- Select faculty Dropdown -->
+        <label for="faculty">Select faculty:</label>
+        <select id="faculty">
+            <option value="none">Select FAculty</option>
+            <option value="science">Science</option>
+            <option value="engineering">Engineering</option>
+            <option value="management">Management</option>
+            <option value="lifescience">Life science</option>
+            
+        </select>
+        &nbsp;&nbsp;
+
+        <!-- department List for the Selected faculty -->
+        <select id="department" disabled>
+            <option value="none"></option>
+        </select>
+
+        <br>
+
+        <!-- Display Selected dept -->
+        <p id="selected-dept"></p>
+
+        <script>
+            const facultyDropdown = document.getElementById('faculty');
+            const deptDropdown = document.getElementById('department');
+            const selecteDept = document.getElementById('selected-dept');
+
+            // dept data by faculty
+            const deptByFaculty = {
+                science: ['Physics', 'Chemistry', 'Math'],
+                engineering: ['CSE', 'ICT', 'TXE'],
+                management: ['Accounting', 'BBA'],
+                lifescience: ['ESRM', 'CPS','Pharmecy'],
+                
+            };
+
+            // Event listener for faculty selection
+            facultyDropdown.addEventListener('change', function () {
+                const selectedFaculty = facultyDropdown.value;
+                const deptList = deptByFaculty[selectedFaculty];
+
+                // Clear the dept dropdown
+                deptDropdown.innerHTML = '<option value="none">Select Department</option>';
+
+                if (selectedFaculty !== 'none') {
+                    // Enable the dept dropdown
+                    deptDropdown.disabled = false;
+
+                    // Populate the dept dropdown with options
+                    deptList.forEach(function (department) {
+                        const option = document.createElement('option');
+                        option.value = department;
+                        option.textContent = department;
+                        deptDropdown.appendChild(option);
+                    });
+                } else {
+                    // Disable the dept dropdown if "Select faculty" is chosen
+                    deptDropdown.disabled = true;
+                }
+            });
+
+            // Event listener for dept selection
+            deptDropdown.addEventListener('change', function () {
+                const selectedDeptName = deptDropdown.value;
+                selecteDept.textContent = `Selected Department: ${selectedDeptName}`;
+            });
+        </script>
+    </center>
+</body>
+</html>

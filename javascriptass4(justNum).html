@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Numeric Input Only</title>
+    <script type="text/javascript">
+        function restrictToNumeric(event) {
+            const inputElement = event.target;
+            const inputValue = inputElement.value;
+            const numericPattern = /^\d+$/;
+
+            if (!numericPattern.test(inputValue)) {
+                inputElement.value = inputValue.replace(/\D/g, '');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Numeric Input Only</h1>
+    <label for="text-input">Enter only numeric characters:</label>
+    <input type="text" id="text-input" oninput="restrictToNumeric(event)" placeholder="Type digits...">
+</body>
+</html>

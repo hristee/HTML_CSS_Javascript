@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Combo Box and Dropdown Box Example</title>
+</head>
+<body>
+    <h2>Combo Box Example:</h2>
+    <select id="comboBox">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+        <option value="option4">Option 4</option>
+    </select>
+    <button onclick="getComboBoxValue()">Get Combo Box Value</button>
+    <p id="comboBoxResult"></p>
+
+    <h2>Dropdown Box Example:</h2>
+    <select id="dropdownBox">
+        <option value="value1">Value 1</option>
+        <option value="value2">Value 2</option>
+        <option value="value3">Value 3</option>
+        <option value="value4">Value 4</option>
+    </select>
+    <button onclick="getDropdownBoxValue()">Get Dropdown Box Value</button>
+    <p id="dropdownBoxResult"></p>
+
+    <script>
+        // Function to get the selected value from the combo box
+        function getComboBoxValue() {
+            const comboBox = document.getElementById("comboBox");
+            const comboBoxResult = document.getElementById("comboBoxResult");
+            const selectedValue = comboBox.value;
+            comboBoxResult.textContent = `Selected Value: ${selectedValue}`;
+        }
+
+        // Function to get the selected value from the dropdown box
+        function getDropdownBoxValue() {
+            const dropdownBox = document.getElementById("dropdownBox");
+            const dropdownBoxResult = document.getElementById("dropdownBoxResult");
+            const selectedValue = dropdownBox.value;
+            dropdownBoxResult.textContent = `Selected Value: ${selectedValue}`;
+        }
+    </script>
+</body>
+</html>

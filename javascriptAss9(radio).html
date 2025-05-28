@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Radio Buttons Example</title>
+</head>
+<body>
+    <h2>Choose at least one option:</h2>
+    <input type="radio" name="option" value="CSE" id="option1">
+    <label for="option1">CSE</label><br>
+    <input type="radio" name="option" value="ICT" id="option2">
+    <label for="option2">ICT</label><br>
+    <input type="radio" name="option" value="TXE" id="option3">
+    <label for="option3">TXE</label><br>
+    <button onclick="getSelectedOptions()">Get Selected Options</button>
+    <p id="selectedOptions"></p>
+
+    <script>
+        // Function to get the selected options
+        function getSelectedOptions() {
+            const options = document.querySelectorAll('input[name="option"]:checked');
+            const selectedOptions = Array.from(options).map(option => option.value);
+            const selectedOptionsText = selectedOptions.join(', ');
+
+            const resultElement = document.getElementById("selectedOptions");
+
+            if (selectedOptions.length > 0) {
+                resultElement.textContent = `Selected Options: ${selectedOptionsText}`;
+            } else {
+                resultElement.textContent = "Please select at least one option.";
+            }
+        }
+    </script>
+</body>
+</html>

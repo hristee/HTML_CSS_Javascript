@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+</head>
+<body>
+    <label for="emailInput">Enter your email:</label>
+    <input type="text" id="emailInput">
+    <button id="validateButton">Validate</button>
+    <p id="result"></p>
+
+    <script>
+        // Function to validate an email address
+        function validateEmail(email) {
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return emailPattern.test(email);
+        }
+
+        // Get the input element, button, and result element
+        const emailInput = document.getElementById("emailInput");
+        const validateButton = document.getElementById("validateButton");
+        const result = document.getElementById("result");
+
+        // Add a click event listener to the button
+        validateButton.addEventListener("click", function () {
+            const email = emailInput.value;
+            if (validateEmail(email)) {
+                result.textContent = "Valid email address!";
+            } else {
+                result.textContent = "Invalid email address. Please enter a valid email.";
+            }
+        });
+    </script>
+</body>
+</html>

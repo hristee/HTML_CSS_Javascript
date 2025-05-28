@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Limit Example</title>
+    <script type="text/javascript">
+        function updateCharacterCount() {
+            const inputElement = document.getElementById("text-input");
+            const minLength = 8; // Minimum character length required
+            const currentLength = inputElement.value.length;
+            const remainingCharacters = minLength - currentLength;
+
+            const characterCountElement = document.getElementById("character-count");
+
+            if (remainingCharacters <= 0) {
+                characterCountElement.innerHTML = "Minimum character requirement met.";
+                characterCountElement.style.color = "black";
+            } else {
+                characterCountElement.innerHTML = `${remainingCharacters} characters needed`;
+                characterCountElement.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Character Limit Example</h1>
+    <label for="text-input">Enter text (minimum 8 characters):</label>
+    <input type="text" id="text-input" oninput="updateCharacterCount()" placeholder="Type something...">
+    <p id="character-count">Minimum 8 characters needed</p>
+</body>
+</html>

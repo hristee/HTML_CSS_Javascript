@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Mandatory Textbox</title>
+    <script type="text/javascript">
+        function validateForm() {
+            const inputElement = document.getElementById("text-input");
+            const inputValue = inputElement.value.trim(); // Trim leading and trailing spaces
+
+            if (inputValue === "") {
+                alert("Textbox cannot be empty. Please enter a value.");
+                return false; // Prevent form submission
+            }
+
+            // If the form is valid, you can proceed with form submission or other actions.
+            // For this example, we'll just display a success message.
+            alert("Form submitted successfully!");
+            return true; // Allow form submission
+        }
+    </script>
+</head>
+<body>
+    <h1>Mandatory Textbox</h1>
+    <form onsubmit="return validateForm()">
+        <label for="text-input">Enter something:</label>
+        <input type="text" id="text-input" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

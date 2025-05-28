@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Number Validation</title>
+</head>
+<body>
+    <label for="mobileNumber">Enter your mobile number (starting with 0 or 1, up to 11 digits):</label>
+    <input type="text" id="mobileNumber" maxlength="11">
+    <button onclick="validateMobileNumber()">Validate</button>
+    <p id="validationResult"></p>
+
+    <script>
+        // validate a mobile number
+        function validateMobileNumber() {
+            const mobileNumberInput = document.getElementById("mobileNumber");
+            const validationResult = document.getElementById("validationResult");
+            const mobileNumber = mobileNumberInput.value;
+
+            //check for valid mobile number
+            const mobileNumberPattern = /^01[3-9]\d{8}$/;
+
+            if (mobileNumberPattern.test(mobileNumber)) {
+                validationResult.textContent = "Valid mobile number!";
+            } else {
+                validationResult.textContent = "Invalid mobile number. Please start with 0 or 1 and enter up to 11 digits.";
+                if (mobileNumber.length !== 11) {
+                    alert("Mobile number must be exactly 11 digits.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+

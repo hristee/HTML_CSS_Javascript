@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Alphabetical Input Only</title>
+    <script type="text/javascript">
+        function restrictToAlphabet(event) {
+            const inputElement = event.target;
+            const inputValue = inputElement.value;
+            const alphabetPattern = /^[a-zA-Z]+$/;
+
+            if (!alphabetPattern.test(inputValue)) {
+                inputElement.value = inputValue.replace(/[^a-zA-Z]/g, '');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Alphabetical Input Only</h1>
+    <label for="text-input">Enter only alphabetical characters:</label>
+    <input type="text" id="text-input" oninput="restrictToAlphabet(event)" placeholder="Type something...">
+</body>
+</html>
